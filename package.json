@@ -1,0 +1,24 @@
+{
+  "name": "optimizedhtml",
+  "version": "4.6",
+  "description": "OptimizedHTML 4 - Start HTML Template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "WebDesign Master",
+  "type": "module",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "browser-sync": "^3.0.2",
+    "cssnano": "^6.0.3",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^9.1.0",
+    "gulp-rsync": "0.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.70.0"
+  }
+}

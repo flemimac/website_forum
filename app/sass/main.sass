@@ -1,0 +1,51 @@
+@use 'sass:math'
+
+@import vars
+@import fonts
+@import libs
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 18px
+	min-width: 320px
+	position: relative
+	line-height: 1.5
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text-color
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+a
+	color: $accent
+	text-decoration: underline
+	&:hover, &:focus
+		color: $accent
+
+b, strong
+	font-weight: bold
+
+
+// ALWAYS END
+@import media
