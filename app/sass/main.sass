@@ -46,6 +46,120 @@ a
 b, strong
 	font-weight: bold
 
+.topline
+	background-color: $dark
+	position: relative
+	height: 65px
+
+.logo
+	font-family: baron-g, sans-serif
+	color: white
+	font-size: 23px
+	display: inline-block
+	text-decoration: none
+	position: absolute
+	padding-left: 30px
+	left: 0
+	line-height: 65px
+	&:hover, &:focus
+		text-decoration: none
+		color: white
+	span
+		color: $accent
+	
+.main-menu
+	padding: 0 100px
+	width: 100%
+	text-align: center
+	ul, li
+		list-style-type: none
+		padding: 0
+		margin: 0
+	li
+		display: inline-block
+		margin-right: -4px
+		&.active
+			a
+				color: white
+				background-color: lighten($dark, 5%)
+		&:hover
+			a
+				color: white
+				background-color: lighten($dark, 8%)
+	a
+		color: #d1d9e0
+		text-decoration: 0
+		text-transform: uppercase
+		font-size: 16px
+		font-weight: bold
+		padding: 0 15px
+		line-height: 65px
+		display: block
+		transition: color .25s ease, backgound-color .25s ease
+
+.search-wrap
+	.search
+		position: absolute
+		padding: 
+			right: 30px 
+			left: 10px
+		right: 0
+		color: #5c6470
+		cursor: pointer
+		line-height: 65px
+		text-align: center
+		transition: color .25s ease
+		&:hover
+			color: lighten(#5c6470, 20%)
+	.search-field
+		position: absolute
+		left: 0
+		top: 65px
+		padding: 15px
+		background-color: lighten($dark, 3%)
+		width: 100%
+		border-top: lighten($dark, 5%) 1px solid
+		z-index: 4
+		display: none
+		input[type=text]
+			width: 100%
+			padding: 8px 15px
+			border: lighten($dark, 10%) 1px solide
+			background-color: lighten($dark, 7.5%)
+			font-size: 16px
+			color: white
+			outline: none
+			&:focus
+				border-color: lighten($dark, 15%)
+			&::placeholder
+				color: rgba(white, .2)
+				font-family: Arial, Helvetica, sans-serif
+				font-style: italic
+
+.mobile-menu-button
+	color: white
+	text-align: center
+	cursor: pointer
+	line-height: 65px
+	font-size: 17px
+	text-transform: uppercase
+	font-weight: bold
+	word-spacing: nowrap
+	display: none
+	&:hover
+		color: $accent
+
+.mobile-menu
+	display: none
+	background-color: lighten($dark, 3%)
+	border-top: lighten($dark, 5%) 1px solid
+	.top-menu
+		display: block
+	li
+		display: block
+		a
+			padding: 0
+			line-height: 45px
 
 // ALWAYS END
 @import media
