@@ -6304,4 +6304,32 @@ section h2 {
 	.mobile-menu-button {
 		display: block;
 	}
+	.item-title-content {
+		padding: 40px 30px;
+	}
+}
+@media (max-width: 767.98px) {
+	.first-section {
+		padding-top: 10px;
+	}
+	.container-fluid,
+	.container-lg,
+	.container-md,
+	.container-sm,
+	.container-xl {
+		padding: 0 10px;
+	}
+	.no-gutters .pattern,
+	.top-ad {
+		margin-bottom: 10px;
+	}
+}
+@media (max-width: 575.98px) {
+	.logo {
+		font-size: 19px;
+		padding-left: 10px;
+	}
+	.search-wrap .search {
+		padding-right: 10px;
+	}
 }

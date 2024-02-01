@@ -13,12 +13,36 @@
         padding: 20px
     .mobile-menu-button
         display: block
+    .item-title
+        &-content
+            padding: 40px 30px
+
 
 // ≥768px
 +media-breakpoint-down(md)
+    .first-section
+        padding-top: $gutter/2
+
+    .container-fluid
+        padding: 0 $gutter/2
+    
+    .top-ad
+        margin-bottom: $gutter/2
+    
+    .no-gutters
+        .pattern
+            margin-bottom: $gutter/2
 
 // ≥576px
 +media-breakpoint-down(sm)
+
+    .logo
+        font-size: 19px
+        padding-left: $gutter/2
+    
+    .search-wrap
+        .search
+            padding-right: $gutter/2
 
 
 /*==========  Mobile First  ==========*/
