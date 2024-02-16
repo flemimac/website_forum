@@ -298,7 +298,52 @@ section
 	> *
 		display: inline-block
 			
+.second-section
+	padding: 10px 0
 
+.news-wrap
+	padding-bottom: 10px
+	.pattern
+		&::before
+			display: none
+	.overlay
+		&::before
+			opacity: 0.4
+
+.item-news
+	min-height: 280px
+	margin: 10px 0
+	color: $text-color
+	&-content
+		border:
+			left: #dfdfdf 1px solid
+			bottom: #dfdfdf 1 px solid
+		z-index: 1
+		position: absolute
+		bottom: 0
+		background-color: #ffffff
+		width: 70%
+		padding: 20px
+		h3
+			font-size: 17px
+			line-height: 1.2
+			margin: 0
+
+	&:hover
+		h3
+			text-decoration: underline
+
+.date
+	font-size: 13px
+	color: $accent
+	font-family: baron-g, sans-serif
+	font-weight: bold
+
+.aside-box
+	margin-bottom: 20px
+	text-align: center
+	.img-responsive
+		display: inline-block
 
 // ALWAYS END
 @import media
