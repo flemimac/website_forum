@@ -345,5 +345,53 @@ section
 	.img-responsive
 		display: inline-block
 
+.dark-section
+	padding: 30px 0
+	background-color: $dark
+	h2
+		a
+			color: #ffffff
+
+.col-item
+	margin: 12px 0 15px
+	a
+		text-decoration: none
+		transition: color .25s ease
+		&:hover, &.hover
+			text-decoration: underline
+	.item-comments
+		margin-top: 2px
+		.fa, .item-comments-count
+			color: #49505a
+		.fa
+			font-size: 12px
+			margin:
+				left: 20px
+				right: 5px
+		.item-comments-count
+			&::after
+				left: -40px
+				color: #49505a
+				opacity: 1
+			&:hover
+				color: #49505a
+		.date
+			display: inline-block
+			margin-top: 0
+	h4
+		font-size: 15px
+		font-weight: normal
+		margin: 0
+		line-height: 1.35
+	.col-item-meta
+		margin:
+			bottom: 8px
+			top: 6px
+	&.col-item-dark
+		a
+			color: #a4a7ab
+			&:hover, &.hover
+				color: #ffffff
+
 // ALWAYS END
 @import media
