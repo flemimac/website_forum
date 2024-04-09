@@ -11,6 +11,9 @@
 	background-color: $accent
 	color: #fff
 
+html, body
+	height: 100%
+
 body
 	font-size: 18px
 	min-width: 320px
@@ -43,30 +46,27 @@ a
 	&:hover, &:focus
 		color: $accent
 
-b, strong
-	font-weight: bold
-
-.topline
+.top-line
 	background-color: $dark
 	position: relative
 	height: 65px
 
 .logo
 	font-family: baron-g, sans-serif
-	color: white
+	color: #ffffff
 	font-size: 23px
 	display: inline-block
 	text-decoration: none
 	position: absolute
-	padding-left: 30px
+	padding-left: $gutter
 	left: 0
 	line-height: 65px
 	&:hover, &:focus
 		text-decoration: none
-		color: white
+		color: #ffffff
 	span
 		color: $accent
-	
+
 .main-menu
 	padding: 0 100px
 	width: 100%
@@ -80,37 +80,38 @@ b, strong
 		margin-right: -4px
 		&.active
 			a
-				color: white
+				color: #ffffff
 				background-color: lighten($dark, 5%)
 		&:hover
 			a
-				color: white
+				color: #ffffff
 				background-color: lighten($dark, 8%)
+
 	a
 		color: #d1d9e0
-		text-decoration: 0
+		text-decoration: none
 		text-transform: uppercase
 		font-size: 16px
 		font-weight: bold
 		padding: 0 15px
 		line-height: 65px
 		display: block
-		transition: color .25s ease, backgound-color .25s ease
+		transition: color .25s ease, background-color .25s ease
 
 .search-wrap
 	.search
 		position: absolute
 		padding: 
-			right: 30px 
+			right: $gutter
 			left: 10px
 		right: 0
-		color: #5c6470
+		color: #454749
 		cursor: pointer
 		line-height: 65px
 		text-align: center
 		transition: color .25s ease
 		&:hover
-			color: lighten(#5c6470, 20%)
+			color: lighten(#454749, 10%)
 	.search-field
 		position: absolute
 		left: 0
@@ -124,27 +125,27 @@ b, strong
 		input[type=text]
 			width: 100%
 			padding: 8px 15px
-			border: lighten($dark, 10%) 1px solide
+			border: lighten($dark, 10%) 1px solid
 			background-color: lighten($dark, 7.5%)
 			font-size: 16px
-			color: white
+			color: #ffffff
 			outline: none
 			&:focus
 				border-color: lighten($dark, 15%)
 			&::placeholder
-				color: rgba(white, .2)
-				font-family: Arial, Helvetica, sans-serif
+				color: rgba(#fff, .2)
+				font-family: arial, sans-serif
 				font-style: italic
 
 .mobile-menu-button
-	color: white
+	color: #ffffff
 	text-align: center
 	cursor: pointer
 	line-height: 65px
 	font-size: 17px
 	text-transform: uppercase
 	font-weight: bold
-	word-spacing: nowrap
+	white-space: nowrap
 	display: none
 	&:hover
 		color: $accent
@@ -168,10 +169,10 @@ b, strong
 	overflow: hidden
 
 .top-ad
-	margin-bottom: $gutter
+	padding-bottom: $gutter
 
 .container-fluid
-	max-width: 1346px
+	max-width: 1200px
 	padding: 0 $gutter
 
 section
@@ -190,7 +191,7 @@ section
 	&-content
 		position: absolute
 		bottom: 0
-		color: white
+		color: #ffffff
 		padding: 40px
 		z-index: 1
 		h3
@@ -200,7 +201,7 @@ section
 			line-height: 1.25
 			font-size: 19px
 		a
-			color: white
+			color: #ffffff
 			text-decoration: none
 			&:hover
 				text-decoration: underline
@@ -211,10 +212,10 @@ section
 	display: block
 	&::before
 		content: ''
-		transition: opacify .25s ease, top .25s ease, left .25s ease, bottom .25s, right .25s ease
+		transition: opacity .25s ease, top .25s ease, left .25s ease, bottom .25s ease, right .25s ease
 		z-index: 1
 		position: absolute
-		border: 1px solid white
+		border: #fff solid 1px
 		top: 0
 		right: 0
 		bottom: 0
@@ -230,6 +231,9 @@ section
 		.overlay
 			&::before
 				opacity: 0.75
+	&-cat-header
+		&::before
+			display: none
 
 .overlay
 	background-size: cover
@@ -283,7 +287,7 @@ section
 		position: relative
 		cursor: pointer
 		margin: 6px 2px 0
-		border: 1px solid white
+		border: 1px solid #fff
 		border-radius: 2px
 	.likely__counter
 		display: none
@@ -294,15 +298,15 @@ section
 		top: 3.5px
 		left: 4px
 		path
-			fill: white
+			fill: #ffffff
 	> *
 		display: inline-block
-			
+
 .second-section
-	padding: 10px 0
+	padding: math.div($gutter, 2) 0
 
 .news-wrap
-	padding-bottom: 10px
+	padding-bottom: math.div($gutter, 2)
 	.pattern
 		&::before
 			display: none
@@ -312,23 +316,22 @@ section
 
 .item-news
 	min-height: 280px
-	margin: 10px 0
+	margin: math.div($gutter, 2) 0
 	color: $text-color
 	&-content
 		border:
 			left: #dfdfdf 1px solid
-			bottom: #dfdfdf 1 px solid
+			bottom: #dfdfdf 1px solid
 		z-index: 1
 		position: absolute
 		bottom: 0
 		background-color: #ffffff
-		width: 70%
-		padding: 20px
+		width: 80%
+		padding: $gutter
 		h3
 			font-size: 17px
 			line-height: 1.2
 			margin: 0
-
 	&:hover
 		h3
 			text-decoration: underline
@@ -338,9 +341,11 @@ section
 	color: $accent
 	font-family: baron-g, sans-serif
 	font-weight: bold
+	margin-top: 10px
+	display: block
 
 .aside-box
-	margin-bottom: 20px
+	margin-bottom: $gutter
 	text-align: center
 	.img-responsive
 		display: inline-block
@@ -393,8 +398,8 @@ section
 			&:hover, &.hover
 				color: #ffffff
 
-.fourth-section 
-	background-color: #f5f5f5
+.fourth-section
+	background-color: #F5F5F5
 	padding:
 		top: 30px
 	&-header
@@ -404,10 +409,899 @@ section
 		.date
 			display: inline-block
 			margin-left: 20px
-			color: #fff
+			color: #ffffff
 	.item-social
 		margin-top: 1px
-		
+
+.type-one
+	&-header
+		margin-bottom: math.div($gutter, 2)
+	&-first
+		> div
+			> a
+				display: block
+				background-color: $dark
+		.item-social
+			margin-top: 8px
+			a, .item-comments, .date
+				color: #a0a0a0
+				font-size: 13px
+			.item-comments-count
+				font-size: 12px
+			.date
+				display: inline-block
+				margin-left: 20px
+		h3
+			font-size: 22px
+			text-transform: uppercase
+			font-weight: 800
+			margin-top: 8px
+			line-height: 1.2
+			margin-bottom: 30px
+			a
+				color: $text-color
+				display: block
+				text-decoration: none
+			&:hover
+				a
+					color: $accent
+					text-decoration: underline
+	.pattern
+		margin-bottom: $gutter
+
+.item-title-white
+	.date
+		font-size: 13px
+		display: inline-block
+		margin-left: 20px
+		color: #ffffff
+	.item-comments-count
+		font-size: 12px
+	.item-social
+		margin-top: 0
+	.item-title
+		min-height: 230px
+		&-content
+			padding: 40px 40px 25px
+
+.button
+	display: inline-block
+	border: none
+	color: #ffffff
+	text-decoration: none
+	background-color: $accent
+	padding: 12px 40px
+	font-size: 14px
+	text-transform: uppercase
+	font-weight: 600
+	border-radius: 10em
+	text-align: center
+	position: relative
+	outline: none
+	cursor: pointer
+	transition: background-color .1s ease
+	&:hover, &:focus
+		text-decoration: none
+		color: #ffffff
+	&:hover
+		background-color: lighten($accent, 5%)
+	&:active
+		background-color: darken($accent, 5%)
+
+.s_more
+	padding: $gutter*2 0
+	background-color: #f5f5f5
+
+.main-footer
+	background-color: $dark-blue
+	padding: 25px 0
+	border-bottom: 1px solid rgba(#fff, .1)
+
+.bottom-footer
+	background-color: $dark-blue
+	padding: 25px 0 35px
+	.logo
+		display: inline-block
+	p
+		color: rgba(#fff, .2)
+		font-size: 12px
+		margin: 5px
+	.footer-copy
+		color: rgba(#fff, .45)
+		font-size: 13px
+		font-family: baron-g, sans-serif
+
+.footer-menu
+	li
+		&.active
+			text-decoration: underline
+			background: none
+			a
+				background: none
+		a
+			font-size: 15px
+			padding: 0 10px
+			&:hover
+				text-decoration: underline
+				background: none
+
+nav.soc
+	padding: 15px 0 20px
+	ul, li
+		margin: 0
+		padding: 0
+		list-style-type: none
+		text-align: center
+	li
+		display: inline-block
+		a
+			display: block
+			text-align: center
+			border: 1px solid rgba(#fff, .1)
+			border-radius: 10em
+			width: 52px
+			height: 52px
+			line-height: 50px
+			color: #ffffff
+			font-size: 24px
+			margin: 4px
+			transition: border-color .25s ease, opacity .25s ease
+			.fa
+				transition: opacity .25s ease
+				opacity: 0.75
+			&:hover
+				border-color: rgba(#fff, .35)
+				.fa
+					opacity: 1
+
+.logo-footer
+	span
+		color: $accent
+
+.cat-header
+	background-size: cover
+	background-position: center
+	position: relative
+	&::before
+		content: ''
+		opacity: 0.25
+		background-color: #000000
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+	&-block
+		position: relative
+		padding: 100px 80px 100px
+		color: #ffffff
+		background-color: rgba($dark, .8)
+		&::before
+			content: ''
+			opacity: 0.2
+			transition: opacity .25s ease, top .25s ease, left .25s ease, bottom .25s ease, right .25s ease
+			z-index: 1
+			position: absolute
+			border: 1px solid #fff
+			top: 10px
+			right: 10px
+			bottom: 10px
+			left: 10px
+		p, h1, h2
+			margin: 0
+		h1, h2
+			font-size: 30px
+			text-transform: uppercase
+			margin-bottom: 15px
+	&.overlay
+		&:hover
+			&::before
+				opacity: 0.25
+
+.cat-list-first
+	padding-top: $gutter
+	background-color: #f5f5f5
+
+.type-one-cat
+	background-color: transparent
+	padding: 0
+
+.cat-list
+	padding-top: $gutter
+	background-color: #fff
+
+a.cat-list-item
+	color: $text-color
+	display: block
+	text-decoration: none
+	margin:
+		bottom: math.div($gutter, 1.5)
+		top: math.div($gutter, 1.5)
+	padding-bottom: 4px
+	border-bottom: 1px solid #dfdfdf
+	h2, h3
+		transition: color .25s ease
+		line-height: 1.2
+		font-size: 21px
+		font-weight: 800
+		margin: 0
+	img
+		transition: opacity .25s ease
+		margin-bottom: 12px
+	p
+		font-size: 15.4px
+		margin-top: 10px
+	.date
+		margin-top: 5px
+	&:hover
+		.pattern
+			&::before
+				top: 10px
+				right: 10px
+				bottom: 10px
+				left: 10px
+				opacity: 0.2
+				z-index: 10
+			img
+				opacity: 0.75
+		h2, h3
+			text-decoration: underline
+			color: $accent
+		p
+			color: $text-color
+	&:last-child
+		border-bottom: none
+
+.main-aside
+	margin-bottom: $gutter
+
+.lb-header
+	border-bottom: 2px solid $accent
+	padding-bottom: 5px
+
+.lb-header, .all-posts-header
+	font-size: 21px
+	font-weight: 800
+	margin: 0
+	text-align: left
+
+.all-posts-header
+	text-transform: uppercase
+
+.lb-item
+	position: relative
+	padding-left: 120px
+	background-color: #f0f0f0
+	margin-bottom: 2px
+	transition: background-color .25s ease
+	text-align: left
+	&:hover
+		background-color: $accent
+		.lb-catname
+			color: #ffffff
+	.lb-body
+		background-color: #f9f9f9
+		padding: 10px 15px
+		a
+			color: $text-color
+			transition: color .25s ease
+			&:hover
+				color: $accent
+	&-header
+		font-size: 14px
+		line-height: 1.4
+		display: block
+		font-weight: 500
+	.date
+		display: inline-block
+		margin-left: 20px
+		color: #aaaaaa
+		margin-top: 0
+	.item-comments
+		.fa
+			font-size: 12px
+			margin-right: 5px
+			color: #aaaaaa
+		.item-comments-count
+			color: #aaaaaa
+			&:hover
+				color: $accent
+				&::fater
+					color: #aaaaaa
+
+.lb-catname
+	position: absolute
+	left: 15px
+	top: 15px
+	color: #888888
+	font-size: 14px
+	font-weight: 800
+	max-width: 90px
+	transition: color .25s ease
+	text-decoration: none
+	&:hover
+		text-decoration: underline
+		color: #ffffff
+	&:focus
+		color: #888888
+
+.lb-footer
+	line-height: 1.2
+
+.latest-box
+	text-align: left
+	.lb-header
+		margin-bottom: 15px
+
+.pagination-section
+	padding: $gutter*2 0
+	background-color: #f5f5f5
+	&-first
+		padding: $gutter 0
+		background: none
+		margin-bottom: $gutter
+		border-bottom: 1px solid #dfdfdf
+
+.pagination
+	padding-top: 12px
+	a, span
+		display: inline-block
+		margin-top: 5px
+		width: 42px
+		height: 42px
+		line-height: 40px
+		border: 2px solid #e5e5e5
+		border-radius: 10em
+		font-size: 18px
+		font-weight: 800
+		text-decoration: none
+		color: #666666
+		transition: border-color .25s ease, color .25s ease
+	a
+		&:hover
+			border-color: $accent
+			color: $accent
+		&.pagination-left, &.pagination-right
+			color: $accent
+	span
+		&.active
+			border-color: $accent
+			color: $accent
+	.pagination-left, .pagination-right
+		border: none
+		font-size: 32px
+		width: 30px
+
+.page-header
+	&.overlay
+		&::before
+			opacity: 1
+			background-color: transparent
+			background-image: linear-gradient(rgba(#000, .2), rgba(#000, .7))
+	height: 80vh
+	min-height: 460px
+	color: #ffffff
+	position: relative
+
+.ispage
+	.top-line
+		position: absolute
+		z-index: 1
+		width: 100%
+
+.page-header
+	&-content
+		position: absolute
+		width: 100%
+		bottom: 15%
+	&-meta
+		> *
+			display: inline-block
+		.date
+			color: #ffffff
+			font-size: 15px
+		h1
+			font-size: 32px
+			line-height: 1.2
+			margin: 15px 0
+			display: block
+		.item-comments-count
+			color: #ffffff
+
+.page-category-link
+	font-size: 14px
+	text-transform: uppercase
+	color: #ffffff
+	background-color: $accent
+	padding: 1px 6px
+	text-decoration: none
+	font-weight: 800
+	margin-right: 5px
+	&:hover, &:focus
+		color: #ffffff
+		text-decoration: none
+
+.article-content
+	padding: $gutter*1.8 0
+	background-color: #fff
+
+.article-top-ad
+	margin: $gutter 0
+
+.breadcrumbs
+	margin-bottom: 15px
+	margin-left: -10px
+	ul, li
+		margin: 0
+		padding: 0
+		list-style-type: none
+	li
+		display: inline-block
+		font-size: 16px
+		a
+			display: inline-block
+			padding: 0 10px
+			position: relative
+			&::after
+				content: '»'
+				position: absolute
+				right: -6px
+				color: #cccccc
+		&.active
+			padding-left: 10px
+			color: #888888
+
+.article-body
+	p
+		margin: 25px 0
+		line-height: 1.6
+
+	img
+		display: block
+		max-width: 100%
+		height: auto
+		margin: auto
+	h2, h3, h4, h5, h6
+		line-height: 1.2
+	blockquote
+		padding: $gutter
+		margin: $gutter*2 $gutter*2.5
+		font-size: 20px
+		color: #000000
+		border:
+			top: $accent 2px solid
+			bottom: $accent 2px solid
+	ul, ol
+		padding-left: $gutter
+		li
+			margin: 10px 0
+	.video
+		margin: $gutter 0
+
+.video
+	position: relative
+	padding-bottom: 56.25%
+	padding-top: 25px
+	height: 0
+	iframe
+		border: none
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%!important
+		height: 100%!important
+
+// Likely On Page Start
+.likely-on-page
+	$likely-sz: 15px //Likely Font Size
+	.likely, .likely__widget
+		padding: 0
+		text-indent: 0 !important
+		list-style: none !important
+		font-weight: 400
+		font-family: Helvetica Neue,Arial,sans-serif
+
+	.likely
+		display: inline-block
+
+	.likely__widget
+		margin: 0
+		font-size: inherit
+
+	.likely
+		opacity: 0
+		font-size: 0 !important
+
+	.likely_visible
+		opacity: 1
+		transition: opacity .1s ease-in
+
+	.likely > *
+		display: inline-block
+		visibility: hidden
+
+	.likely_visible > *
+		visibility: inherit
+
+	.likely__widget
+		position: relative
+		white-space: nowrap
+
+	.likely__button, .likely__widget
+		display: inline-block
+
+	.likely__button, .likely__counter
+		text-decoration: none
+		text-rendering: optimizeLegibility
+		margin: 0
+		outline: 0
+
+	.likely__button
+		position: relative
+		user-select: none
+
+	.likely__counter
+		display: none
+		position: relative
+		font-weight: 400
+
+	.likely_ready
+		.likely__counter
+			display: inline-block
+		.likely__counter_empty
+			display: none
+
+	.likely__button, .likely__counter, .likely__icon
+		vertical-align: top
+
+	.likely__widget
+		vertical-align: top
+		transition: background .33s ease-out,color .33s ease-out,fill .33s ease-out
+		&:active, &:focus, &:hover
+			transition: none
+			cursor: pointer
+
+	@media (hover: none)
+		.likely__widget
+			&:active, &:focus, &:hover
+				transition: background .33s ease-out,color .33s ease-out,fill .33s ease-out
+				cursor: unset
+
+	.likely__icon
+		position: relative
+		text-align: left
+		display: inline-block
+
+	.likely svg
+		position: absolute
+		left: 3px
+		top: 3px
+		width: 16px
+		height: 16px
+
+	.likely__button, .likely__counter
+		line-height: inherit
+		cursor: inherit
+
+	.likely__button:empty
+		display: none
+
+	.likely__counter
+		text-align: center
+
+	.likely
+		.likely__widget
+			color: #000
+			background: rgba(231, 231, 231, 0.8)
+		.likely__counter
+			background-size: 1px 1px
+			background-repeat: repeat-y
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0) 0.5px, rgba(0, 0, 0, 0) 100%)
+
+	.likely-light
+		.likely__widget
+			color: #fff
+			fill: #fff
+			background: rgba(236, 236, 236, 0.16)
+			text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+		.likely__counter
+			background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0, rgba(255, 255, 255, 0) 0.5px, rgba(255, 255, 255, 0) 100%)
+
+	.likely__widget_facebook
+		fill: #425497
+		&:active, &:focus, &:hover
+			background: rgba(207, 212, 229, 0.8)
+
+	@media (hover: none)
+		.likely__widget_facebook
+			&:active, &:focus, &:hover
+				background: rgba(231, 231, 231, 0.8)
+
+	.likely-light .likely__widget_facebook
+		&:active, &:focus, &:hover
+			text-shadow: #425497 0 0 .25em
+			background: rgba(66, 84, 151, 0.7)
+
+	@media (hover: none)
+		.likely-light .likely__widget_facebook
+			&:active, &:focus, &:hover
+				text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+				background: rgba(236, 236, 236, 0.16)
+
+	.likely__widget_gplus
+		fill: #dd4241
+		&:active, &:focus, &:hover
+			background: rgba(246, 207, 207, 0.8)
+
+	@media (hover: none)
+		.likely__widget_gplus
+			&:active, &:focus, &:hover
+				background: rgba(231, 231, 231, 0.8)
+
+	.likely-light .likely__widget_gplus
+		&:active, &:focus, &:hover
+			text-shadow: #dd4241 0 0 .25em
+			background: rgba(221, 66, 65, 0.7)
+
+	@media (hover: none)
+		.likely-light .likely__widget_gplus
+			&:active, &:focus, &:hover
+				text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+				background: rgba(236, 236, 236, 0.16)
+
+	.likely__widget_linkedin
+		fill: #0077b5
+		&:active, &:focus, &:hover
+			background: rgba(191, 221, 236, 0.8)
+
+	@media (hover: none)
+		.likely__widget_linkedin
+			&:active, &:focus, &:hover
+				background: rgba(231, 231, 231, 0.8)
+
+	.likely-light .likely__widget_linkedin
+		&:active, &:focus, &:hover
+			text-shadow: #0077b5 0 0 .25em
+			background: rgba(0, 119, 181, 0.7)
+
+	@media (hover: none)
+		.likely-light .likely__widget_linkedin
+			&:active, &:focus, &:hover
+				text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+				background: rgba(236, 236, 236, 0.16)
+
+	.likely__widget_odnoklassniki
+		fill: #f6903b
+		&:active, &:focus, &:hover
+			background: rgba(252, 227, 206, 0.8)
+
+	@media (hover: none)
+		.likely__widget_odnoklassniki
+			&:active, &:focus, &:hover
+				background: rgba(231, 231, 231, 0.8)
+
+	.likely-light .likely__widget_odnoklassniki
+		&:active, &:focus, &:hover
+			text-shadow: #f6903b 0 0 .25em
+			background: rgba(246, 144, 59, 0.7)
+
+	@media (hover: none)
+		.likely-light .likely__widget_odnoklassniki
+			&:active, &:focus, &:hover
+				text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+				background: rgba(236, 236, 236, 0.16)
+
+	.likely__widget_pinterest
+		fill: #bd081c
+		&:active, &:focus, &:hover
+			background: rgba(238, 193, 198, 0.8)
+
+	@media (hover: none)
+		.likely__widget_pinterest
+			&:active, &:focus, &:hover
+				background: rgba(231, 231, 231, 0.8)
+
+	.likely-light .likely__widget_pinterest
+		&:active, &:focus, &:hover
+			text-shadow: #bd081c 0 0 .25em
+			background: rgba(189, 8, 28, 0.7)
+
+	@media (hover: none)
+		.likely-light .likely__widget_pinterest
+			&:active, &:focus, &:hover
+				text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+				background: rgba(236, 236, 236, 0.16)
+
+	.likely__widget_telegram
+		fill: #34abde
+		&:active, &:focus, &:hover
+			background: rgba(204, 234, 246, 0.8)
+
+	@media (hover: none)
+		.likely__widget_telegram
+			&:active, &:focus, &:hover
+				background: rgba(231, 231, 231, 0.8)
+
+	.likely-light .likely__widget_telegram
+		&:active, &:focus, &:hover
+			text-shadow: #34abde 0 0 .25em
+			background: rgba(52, 171, 222, 0.7)
+
+	@media (hover: none)
+		.likely-light .likely__widget_telegram
+			&:active, &:focus, &:hover
+				text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+				background: rgba(236, 236, 236, 0.16)
+
+	.likely__widget_twitter
+		fill: #00b7ec
+		&:active, &:focus, &:hover
+			background: rgba(191, 237, 250, 0.8)
+
+	@media (hover: none)
+		.likely__widget_twitter
+			&:active, &:focus, &:hover
+				background: rgba(231, 231, 231, 0.8)
+
+	.likely-light .likely__widget_twitter
+		&:active, &:focus, &:hover
+			text-shadow: #00b7ec 0 0 .25em
+			background: rgba(0, 183, 236, 0.7)
+
+	@media (hover: none)
+		.likely-light .likely__widget_twitter
+			&:active, &:focus, &:hover
+				text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+				background: rgba(236, 236, 236, 0.16)
+
+	.likely__widget_vkontakte
+		fill: #526e8f
+		&:active, &:focus, &:hover
+			background: rgba(211, 218, 227, 0.8)
+
+	@media (hover: none)
+		.likely__widget_vkontakte
+			&:active, &:focus, &:hover
+				background: rgba(231, 231, 231, 0.8)
+
+	.likely-light .likely__widget_vkontakte
+		&:active, &:focus, &:hover
+			text-shadow: #526e8f 0 0 .25em
+			background: rgba(82, 110, 143, 0.7)
+
+	@media (hover: none)
+		.likely-light .likely__widget_vkontakte
+			&:active, &:focus, &:hover
+				text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+				background: rgba(236, 236, 236, 0.16)
+
+	.likely__widget_whatsapp
+		fill: #25d366
+		&:active, &:focus, &:hover
+			background: rgba(200, 244, 216, 0.8)
+
+	@media (hover: none)
+		.likely__widget_whatsapp
+			&:active, &:focus, &:hover
+				background: rgba(231, 231, 231, 0.8)
+
+	.likely-light .likely__widget_whatsapp
+		&:active, &:focus, &:hover
+			text-shadow: #25d366 0 0 .25em
+			background: rgba(37, 211, 102, 0.7)
+
+	@media (hover: none)
+		.likely-light .likely__widget_whatsapp
+			&:active, &:focus, &:hover
+				text-shadow: rgba(0, 0, 0, 0.2) 0 0 0.33em
+				background: rgba(236, 236, 236, 0.16)
+
+	.likely
+		margin: 0 -5px -10px
+		.likely__widget
+			line-height: 20px
+			font-size: 14px
+			border-radius: 3px
+			height: 22px
+			margin: 0 5px 10px
+		.likely__icon
+			width: 22px
+			height: 22px
+		.likely__button
+			padding: 1px 4px 1px 0
+		.likely__counter
+			padding: 1px 4px
+
+	.likely-big
+		margin: 0 -6px -12px
+		.likely__widget
+			line-height: 28px
+			font-size: 18px
+			border-radius: 4px
+			height: 32px
+			margin: 0 6px 12px
+		.likely__icon
+			width: 32px
+			height: 32px
+		.likely__button
+			padding: 2px 6px 2px 0
+		.likely__counter
+			padding: 2px 6px
+		svg
+			left: 4px
+			top: 4px
+			width: 24px
+			height: 24px
+
+	.likely-small
+		margin: 0 -4px -8px
+		.likely__widget
+			line-height: 14px
+			font-size: 12px
+			border-radius: 2px
+			height: 18px
+			margin: 0 4px 8px
+		.likely__icon
+			width: 18px
+			height: 18px
+		.likely__button
+			padding: 2px 3px 2px 0
+		.likely__counter
+			padding: 2px 3px
+		svg
+			left: 3px
+			top: 3px
+			width: 12px
+			height: 12px
+
+	.likely
+		top: -10px
+		position: relative
+		.likely__widget
+			border-radius: 0
+			padding: 3px 3px 25px 6px
+			font-size: $likely-sz
+		.likely__counter
+			padding: 1px 4px 1px 6px
+		.likely__button
+			margin-left: 2px
+			opacity: .8
+			padding: 1px 8px 1px 1px
+// Likely On Page End
+
+.read-more
+	margin-bottom: $gutter
+	&-header
+		font-size: 21px
+		font-weight: 800
+		margin: $gutter*1.5 0 math.div($gutter, 2) 0
+	ul, li
+		margin: 0
+		padding: 0
+		list-style-type: none
+	a
+		line-height: 1.3
+		display: inline-block
+		color: #151515
+		transition: color .25s ease
+		margin: 8px 0
+		&:hover
+			color: $accent
+
+.comments
+	padding: $gutter 0
+
+.header-about
+	text-align: center
+	h1, h2
+		font-family: baron-g, sans-serif
+		text-transform: lowercase
+	&::before
+		opacity: 0
+	.cat-header-block
+		background-color: rgba(#2c2f33, .8)
+		&::before
+			opacity: 0.12
 
 // ALWAYS END
 @import media

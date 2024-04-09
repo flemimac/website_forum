@@ -4,79 +4,127 @@
 /*==========  Desktop First  ==========*/
 
 // ≥1200px
-+media-breakpoint-down(xl)
++media-breakpoint-down(lg)
 
 // ≥992px
-+media-breakpoint-down(lg)
-    .main-menu
-        display: none
-        padding: 20px
-    .mobile-menu-button
-        display: block
-    .item-title
-        &-content
-            padding: 40px 30px
-    
-    .second-section, .third-section
-        padding: calc($gutter / 2) 0
-    
-    .third-section
-        padding: $gutter 0 30px
-        > div > div> div:last-of-type
-            .col-item
-                border-bottom: 0
-                padding-bottom: 0
-                margin-bottom: 0
++media-breakpoint-down(md)
+
+	.main-menu
+		display: none
+		padding: 20px
+	.mobile-menu-button
+		display: block
+
+	.item-title
+		&-content
+			padding: 40px 30px
+
+	.second-section, .third-section
+		padding: math.div($gutter, 2)
+
+	.third-section
+		padding: $gutter 0 30px
+		> div > div > div:last-of-type
+			.col-item
+				border-bottom: 0
+				padding-bottom: 0
+				margin-bottom: 0
+
+	.ispage
+		.top-menu
+			top: 65px
+			position: relative
 
 // ≥768px
-+media-breakpoint-down(md)
-    .first-section
-        padding:
-            top: calc($gutter / 2)
-            bottom: calc($gutter / 2)
++media-breakpoint-down(sm)
 
-    .container-fluid
-        padding: 0 calc($gutter / 2)
-    
-    .top-ad
-        margin-bottom: calc($gutter / 2)
-    
-    .no-gutters
-        .pattern
-            margin-bottom: calc($gutter / 2)
+	.first-section
+		padding:
+			top: math.div($gutter, 2)
+			bottom: math.div($gutter, 2)
 
-    .item-news
-        margin: calc($gutter / 2) 0 0
+	.container-fluid
+		padding: 0 math.div($gutter, 2)
 
-    .col-item
-        margin-bottom: calc($gutter / 2)
-        padding-bottom: $gutter
-        border-bottom: 1px solid rgba(#fff, .05)
-        margin-top: 0
-        &-meta, h4
-            padding: 0 $gutter
-        a
-            img
-                margin-bottom: calc($gutter / 2)
-        .col-item-meta
-            margin-bottom: 5px
-    
+	.top-ad
+		padding-bottom: math.div($gutter, 2)
+
+	.no-gutters
+		.pattern
+			margin-bottom: math.div($gutter, 2)
+
+	.item-news
+		margin: math.div($gutter, 2) 0 0
+
+	.col-item
+		margin-bottom: math.div($gutter, 2)
+		padding-bottom: $gutter
+		border-bottom: 1px solid rgba(#fff, .05)
+		&-meta, h4
+			padding: 0 $gutter
+		a
+			img
+				margin-bottom: math.div($gutter, 2)
+		.col-item-meta
+			margin-bottom: 5px
+	
+	.type-one
+		.pattern
+			margin-bottom: math.div($gutter, 2)
+	
+	.cat-header
+		&-block
+			padding: 50px
+			h1, h2
+				font-size: 28px
+
+	.page-header
+		&-meta
+			h1
+				font-size: 24px
+				margin: 10px 0 0
+		&.overlay::before
+			background-image: linear-gradient(rgba(#000, .3), rgba(#000, .75))
+		&-content
+			bottom: 10%
+
+	.article-body
+		blockquote
+			margin: 0
 
 // ≥576px
 +media-breakpoint-down(sm)
 
-    .logo
-        font-size: 19px
-        padding-left: calc($gutter / 2)
-    
-    .search-wrap
-        .search
-            padding-right: calc($gutter / 2)
-    
-    .fourth-section
-        padding: calc($gutter / 1.5) 0
+	.logo
+		font-size: 19px
+		padding-left: math.div($gutter, 2)
 
+	.search-wrap
+		.search
+			padding-right: math.div($gutter, 2)
+	
+	.fourth-section
+		padding: math.div($gutter, 1.5) 0
 
+	nav.soc
+		padding: 10px 0 0
+		li
+			a
+				width: 40px
+				height: 40px
+				font-size: 18px
+				line-height: 38px
+	
+	.cat-list
+		padding-top: 0
+
+	.cat-list-item:last-child
+		margin-bottom: 0
+		padding-bottom: 0
+	
+	.all-posts-header
+		margin-top: math.div($gutter, 2)
+ 
 /*==========  Mobile First  ==========*/
 
 // ≤576px
